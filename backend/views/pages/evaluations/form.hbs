@@ -1,0 +1,19 @@
+<div class="page auth-page-simple">
+{{> navbar}}
+<div class="main-wrap small">
+{{> sidebar}}
+<main class="content">
+<h2>Form Evaluasi Mingguan</h2>
+<form action="/api/evaluations" method="post" id="evalForm" class="form">
+<label>Skor (0-100)</label>
+<input name="content[score]" type="number" min="0" max="100" required value="{{latest.content.score}}" />
+<label>Catatan</label>
+<textarea name="content[notes]">{{latest.content.notes}}</textarea>
+<div class="form-actions">
+<button class="btn primary" type="submit">Submit</button>
+<a class="btn ghost" href="/api/evaluations/my-history">Batal</a>
+</div>
+</form>
+</main>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="page">
+{{> navbar}}
+<div class="main-wrap">
+{{> sidebar}}
+<main class="content">
+<h2>Riwayat Evaluasi</h2>
+<table class="table">
+<thead>
+<tr><th>Minggu</th><th>Versi</th><th>Skor</th><th>Final</th><th>Waktu</th></tr>
+</thead>
+<tbody>
+{{#each evaluations}}
+<tr>
+<td>{{this.weekStart}}</td>
+<td>{{this.version}}</td>
+<td>{{this.content.score}}</td>
+<td>{{this.final}}</td>
+<td>{{this.submittedAt}}</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+</main>
+</div>
+</div>

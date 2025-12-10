@@ -1,0 +1,26 @@
+<h2>Login (Frontend)</h2>
+
+<form id="loginForm">
+    <input id="email" placeholder="Email">
+    <input id="pass" placeholder="Password">
+    <button type="submit">Login</button>
+</form>
+
+<script>
+document.getElementById("loginForm").onsubmit = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch("http://localhost:3000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            email: "dummy",
+            password: "dummy"
+        })
+    });
+
+    const data = await res.json();
+    console.log(data);
+    alert("Login backend response: " + data.message);
+};
+</script>

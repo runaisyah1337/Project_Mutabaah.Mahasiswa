@@ -1,0 +1,30 @@
+<div class="page">
+{{> navbar}}
+<div class="main-wrap">
+{{> sidebar}}
+<main class="content">
+<h2>Dashboard Pembina</h2>
+<p class="muted">Ringkasan perkembangan mahasiswa bimbingan</p>
+
+
+<section class="chart-area">
+<h3>Rata-rata skor per minggu (kelas bimbingan)</h3>
+<canvas id="pembinaChart" height="120"></canvas>
+</section>
+
+
+<section class="list-students">
+<h4>Daftar Bimbingan</h4>
+<ul>
+{{#each students}}
+<li>{{this.name}} — <a href="/api/reports/student/{{this._id}}">Lihat</a></li>
+{{/each}}
+</ul>
+</section>
+
+
+</main>
+</div>
+</div>
+<script>window.INIT_DATA = {{{json initData}}};</script>
+<script src="/js/charts.js"></script>

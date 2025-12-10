@@ -1,0 +1,15 @@
+<div class="page">
+{{> navbar}}
+<div class="main-wrap">
+{{> sidebar}}
+<main class="content">
+<h2>Dashboard Admin</h2>
+<section class="chart-area">
+<h3>Rekapan Semua Mahasiswa</h3>
+<canvas id="adminChart" height="120"></canvas>
+</section>
+</main>
+</div>
+</div>
+<script>window.INIT_DATA = {{{json initData}}};</script>
+<script src="/js/charts.js"></script>

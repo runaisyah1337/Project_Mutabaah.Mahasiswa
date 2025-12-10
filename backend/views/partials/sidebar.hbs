@@ -1,0 +1,24 @@
+<aside class="sidebar">
+<div class="profile">
+<div class="avatar">{{#if user}}{{user.name.[0]}}{{else}}U{{/if}}</div>
+<div class="meta">
+<div class="name">{{user.name}}</div>
+<div class="role">{{user.role}}</div>
+</div>
+</div>
+<nav class="nav">
+{{#if (eq user.role 'mahasiswa')}}
+<a href="/dashboard/student">Dashboard</a>
+<a href="/evaluations/form">Isi Evaluasi Mingguan</a>
+<a href="/api/evaluations/my-history">Rekapan Pribadi</a>
+{{/if}}
+{{#if (eq user.role 'pembina')}}
+<a href="/dashboard/pembina">Dashboard Pembina</a>
+<a href="/api/reports/pembina/{{user._id}}">Rekapan Kelas</a>
+{{/if}}
+{{#if (eq user.role 'admin')}}
+<a href="/dashboard/admin">Dashboard Admin</a>
+<a href="/api/reports/summary">Rekapan Semua</a>
+{{/if}}
+</nav>
+</aside>
